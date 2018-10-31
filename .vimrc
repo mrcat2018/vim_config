@@ -7,6 +7,9 @@ set hls
 set cindent
 set autoindent
 set smartindent
+set cursorline
+set scrolloff=5
+set sidescrolloff=3
 colorscheme molokai
 
 let mapleader="\<Space>"
@@ -14,8 +17,6 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>fw :w<CR>
 nnoremap <leader>ww :w<CR>
 nnoremap <leader>wq :wq<CR>
-nnoremap <leader>fo :e 
-nnoremap <leader>ft :NERDTreeToggle<CR>
 nnoremap <leader>wh <C-W>h
 nnoremap <leader>wj <C-W>j
 nnoremap <leader>wk <C-W>k
@@ -63,6 +64,10 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'bufexplorer.zip'
+"Plugin 'airblade/vim-gitgutter'
+Plugin 'mhinz/vim-signify'
+Plugin 'Yggdroot/indentLine'
+Plugin 'ctrlpvim/ctrlp.vim'
 call vundle#end()
 filetype plugin indent on
 " ----------------------------- Vundle End   -----------------------------
@@ -75,8 +80,6 @@ let g:ycm_show_diagnostics_ui=0
 let g:ycm_seed_identifiers_with_syntax=1
 set completeopt-=preview
 let g:ycm_collect_identifiers_from_tags_files=1
-let g:ycm_error_symbol = '✗'
-let g:ycm_warning_symbol = '⚠'
 
 "bufexplorer
 let g:bufExplorerDefaultHelp=0
@@ -89,3 +92,7 @@ nnoremap <leader>tb :TagbarToggle<CR>
 
 "nerdtree
 let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+nnoremap <leader>ft :NERDTreeToggle<CR>
+
+"ctrlp
+let g:ctrlp_map = '<Leader>fo'
